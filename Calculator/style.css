@@ -1,63 +1,90 @@
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  background-color: #a0d7ff;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background: #f0f2f5;
 }
 
-.calculator {
-  display: grid;
-  grid-template-rows:
-    minmax(80px, auto)
-    repeat(5, 60px);
-  grid-template-columns: repeat(4, 60px);
-  justify-content: center;
-  background-color: hsl(220, 6%, 10%);
-  padding: 1.4rem;
-  border-radius: 12px;
-  gap: 0.7rem;
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 300px;
 }
-.calculator button {
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+#display {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.5rem;
   border: none;
-  font-family: inherit;
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: hsl(204, 100%, 58%);
-  background-color: hsl(230, 6%, 20%);
   border-radius: 10px;
+  margin-bottom: 15px;
+  background: #e9ecef;
+  text-align: right;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: #dee2e6;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
-.calculator button:hover {
-  background-color: hsl(230, 6%, 30%);
+
+.btn:hover {
+  background: #ced4da;
 }
-.span-2 {
+
+.equal {
+  grid-row: span 2;
+  background: #00b894;
+  color: white;
+}
+
+.equal:hover {
+  background: #019875;
+}
+
+.zero {
   grid-column: span 2;
 }
-.calculator > .output {
-  font-size: 2rem;
-  background-color: inherit;
-  color: white;
-  grid-column: 1 / -1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-end;
-  word-break: break-all;
-  border-radius: inherit;
-}
 
-.output .prev-display {
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: hsl(0, 0%, 65%);
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .btn {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  #display {
+    font-size: 1.2rem;
+  }
 }
