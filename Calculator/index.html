@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Calculator</h1>
+    <input type="text" id="display" readonly />
+    <div class="buttons">
+      <button class="btn" onclick="clearDisplay()">C</button>
+      <button class="btn" onclick="appendValue('/')">/</button>
+      <button class="btn" onclick="appendValue('*')">*</button>
+      <button class="btn" onclick="deleteLast()">DEL</button>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-    <script src="./script.js" defer></script>
-  </head>
+      <button class="btn" onclick="appendValue('7')">7</button>
+      <button class="btn" onclick="appendValue('8')">8</button>
+      <button class="btn" onclick="appendValue('9')">9</button>
+      <button class="btn" onclick="appendValue('-')">-</button>
 
-  <body>
-    <div class="calculator">
-      <div class="output">
-        <div class="prev-display"></div>
-        <div class="curr-display"></div>
-      </div>
-      <button class="span-2 clear">AC</button>
-      <button class="delete">DEL</button>
-      <button class="operation">/</button>
-      <button class="number">1</button>
-      <button class="number">2</button>
-      <button class="number">3</button>
-      <button class="operation">+</button>
-      <button class="number">4</button>
-      <button class="number">5</button>
-      <button class="number">6</button>
-      <button class="operation">-</button>
-      <button class="number">7</button>
-      <button class="number">8</button>
-      <button class="number">9</button>
-      <button class="operation">*</button>
-      <button class="number">.</button>
-      <button class="number">0</button>
-      <button class="span-2 equal">=</button>
+      <button class="btn" onclick="appendValue('4')">4</button>
+      <button class="btn" onclick="appendValue('5')">5</button>
+      <button class="btn" onclick="appendValue('6')">6</button>
+      <button class="btn" onclick="appendValue('+')">+</button>
+
+      <button class="btn" onclick="appendValue('1')">1</button>
+      <button class="btn" onclick="appendValue('2')">2</button>
+      <button class="btn" onclick="appendValue('3')">3</button>
+      <button class="btn equal" onclick="calculate()">=</button>
+
+      <button class="btn zero" onclick="appendValue('0')">0</button>
+      <button class="btn" onclick="appendValue('.')">.</button>
     </div>
-  </body>
+  </div>
 
+  <script src="script.js"></script>
+</body>
 </html>
